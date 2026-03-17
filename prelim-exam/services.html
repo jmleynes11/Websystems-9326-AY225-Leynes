@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Services - Bacoor City</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/bacoor-seal.png" alt="Bacoor City Seal" onerror="this.style.display='none'">
+                <div class="logo-text">
+                    <h1>Bacoor City</h1>
+                    <p>Local Government Unit</p>
+                </div>
+            </div>
+            <nav id="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="departments.html">Departments</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="announcements.html">Announcements</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Public Services</h1>
+            <p>Access city government services online and offline</p>
+        </div>
+    </section>
+
+    <!-- Services Categories (Accordion) -->
+    <section class="services-section">
+        <div class="container">
+            <h2>Available Services</h2>
+            
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>📄 Document Services</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="service-list">
+                            <li>
+                                <strong>Business Permit Application</strong>
+                                <p>Apply for new business permits or renew existing ones</p>
+                                <span class="service-type online">Online Available</span>
+                            </li>
+                            <li>
+                                <strong>Cedula (Community Tax Certificate)</strong>
+                                <p>Get your community tax certificate for various transactions</p>
+                                <span class="service-type online">Online Available</span>
+                            </li>
+                            <li>
+                                <strong>Barangay Clearance</strong>
+                                <p>Request barangay clearance for employment or other purposes</p>
+                                <span class="service-type offline">Walk-in Required</span>
+                            </li>
+                            <li>
+                                <strong>Certificate of Residency</strong>
+                                <p>Obtain proof of residency in Bacoor City</p>
+                                <span class="service-type offline">Walk-in Required</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>🏥 Health Services</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="service-list">
+                            <li>
+                                <strong>Health Certificate</strong>
+                                <p>Get health certificates for employment or business requirements</p>
+                                <span class="service-type offline">Walk-in Required</span>
+                            </li>
+                            <li>
+                                <strong>Vaccination Services</strong>
+                                <p>Free vaccination programs for children and adults</p>
+                                <span class="service-type offline">Walk-in Required</span>
+                            </li>
+                            <li>
+                                <strong>Medical Consultation</strong>
+                                <p>Free medical consultation at city health centers</p>
+                                <span class="service-type offline">Walk-in Required</span>
+                            </li>
+                            <li>
+                                <strong>Prenatal Care</strong>
+                                <p>Free prenatal services for expecting mothers</p>
+                                <span class="service-type offline">Walk-in Required</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>👥 Social Services</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="service-list">
+                            <li>
+                                <strong>Senior Citizen ID</strong>
+                                <p>Application for senior citizen identification and benefits</p>
+                                <span class="service-type offline">Walk-in Required</span>
+                            </li>
+                            <li>
+                                <strong>PWD ID Application</strong>
+                                <p>ID for Persons with Disability and special privileges</p>
+                                <span class="service-type offline">Walk-in Required</span>
+                            </li>
+                            <li>
+                                <strong>Financial Assistance</strong>
+                                <p>Apply for medical, burial, or educational assistance</p>
+                                <span class="service-type offline">Walk-in Required</span>
+                            </li>
+                            <li>
+                                <strong>Solo Parent ID</strong>
+                                <p>Benefits and support for solo parents</p>
+                                <span class="service-type offline">Walk-in Required</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>🏗️ Engineering Services</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="service-list">
+                            <li>
+                                <strong>Building Permit</strong>
+                                <p>Apply for construction, renovation, or demolition permits</p>
+                                <span class="service-type online">Online Available</span>
+                            </li>
+                            <li>
+                                <strong>Occupancy Permit</strong>
+                                <p>Certificate of occupancy for completed structures</p>
+                                <span class="service-type offline">Walk-in Required</span>
+                            </li>
+                            <li>
+                                <strong>Electrical Permit</strong>
+                                <p>Permits for electrical installation and repairs</p>
+                                <span class="service-type offline">Walk-in Required</span>
+                            </li>
+                            <li>
+                                <strong>Plumbing Permit</strong>
+                                <p>Permits for plumbing installation and modifications</p>
+                                <span class="service-type offline">Walk-in Required</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>🚨 Public Safety Services</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="service-list">
+                            <li>
+                                <strong>Police Clearance</strong>
+                                <p>Certificate of no criminal record</p>
+                                <span class="service-type offline">Walk-in Required</span>
+                            </li>
+                            <li>
+                                <strong>Fire Safety Inspection</strong>
+                                <p>Request for fire safety evaluation and certification</p>
+                                <span class="service-type offline">Walk-in Required</span>
+                            </li>
+                            <li>
+                                <strong>Incident Reporting</strong>
+                                <p>Report incidents or emergencies to authorities</p>
+                                <span class="service-type online">Online Available</span>
+                            </li>
+                            <li>
+                                <strong>CCTV Footage Request</strong>
+                                <p>Request CCTV footage for investigation purposes</p>
+                                <span class="service-type offline">Walk-in Required</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Request Form -->
+    <section class="service-request-section">
+        <div class="container">
+            <h2>Service Request Form</h2>
+            <p>Submit your service request online and we'll get back to you within 24-48 hours.</p>
+            
+            <form id="serviceRequestForm" class="service-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                        <span class="error-message" id="fullNameError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Contact Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                        <span class="error-message" id="phoneError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="barangay">Barangay *</label>
+                        <select id="barangay" name="barangay" required>
+                            <option value="">Select Barangay</option>
+                            <option value="Alima">Alima</option>
+                            <option value="Aniban I">Aniban I</option>
+                            <option value="Aniban II">Aniban II</option>
+                            <option value="Banalo">Banalo</option>
+                            <option value="Digman">Digman</option>
+                            <option value="Dulong Bayan">Dulong Bayan</option>
+                            <option value="Habay I">Habay I</option>
+                            <option value="Habay II">Habay II</option>
+                            <option value="Ligas I">Ligas I</option>
+                            <option value="Ligas II">Ligas II</option>
+                            <option value="Mambog">Mambog</option>
+                            <option value="Molino">Molino</option>
+                            <option value="Niog">Niog</option>
+                            <option value="Panapaan">Panapaan</option>
+                            <option value="Queens Row">Queens Row</option>
+                            <option value="Tabing Dagat">Tabing Dagat</option>
+                            <option value="Talaba">Talaba</option>
+                            <option value="Zapote">Zapote</option>
+                        </select>
+                        <span class="error-message" id="barangayError"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="serviceType">Service Requested *</label>
+                    <select id="serviceType" name="serviceType" required>
+                        <option value="">Select Service</option>
+                        <option value="Business Permit">Business Permit Application</option>
+                        <option value="Cedula">Cedula (Community Tax Certificate)</option>
+                        <option value="Building Permit">Building Permit</option>
+                        <option value="Health Certificate">Health Certificate</option>
+                        <option value="Senior Citizen ID">Senior Citizen ID</option>
+                        <option value="PWD ID">PWD ID Application</option>
+                        <option value="Financial Assistance">Financial Assistance</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <span class="error-message" id="serviceTypeError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Additional Details *</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <span class="error-message" id="messageError"></span>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <label>
+                        <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                        I agree to the terms and conditions and data privacy policy *
+                    </label>
+                    <span class="error-message" id="agreeTermsError"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit Request</button>
+            </form>
+
+            <div id="formSuccessMessage" class="success-message" style="display: none;">
+                <h3>✓ Request Submitted Successfully!</h3>
+                <p>Your service request has been received. Our team will contact you within 24-48 hours.</p>
+                <p>Reference Number: <strong id="referenceNumber"></strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Bacoor City LGU</h3>
+                    <p>Committed to serving the people with integrity, transparency, and excellence.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="departments.html">Departments</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="announcements.html">Announcements</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <p>📍 City Hall, Bacoor, Cavite</p>
+                    <p>📞 (046) 123-4567</p>
+                    <p>✉️ info@bacoor.gov.ph</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Office Hours</h3>
+                    <p>Monday - Friday</p>
+                    <p>8:00 AM - 5:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bacoor City Local Government Unit. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/accordion.js"></script>
+    <script src="js/form-validation.js"></script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Bacoor City</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/bacoor-seal.png" alt="Bacoor City Seal" onerror="this.style.display='none'">
+                <div class="logo-text">
+                    <h1>Bacoor City</h1>
+                    <p>Local Government Unit</p>
+                </div>
+            </div>
+            <nav id="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="departments.html">Departments</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="announcements.html">Announcements</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+                <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch with Bacoor City Government</p>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="contact-info-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>Address</h3>
+                    <p>Bacoor City Hall</p>
+                    <p>Government Center, Bacoor, Cavite</p>
+                    <p>4102 Philippines</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h3>Phone Numbers</h3>
+                    <p>Main Line: (046) 123-4567</p>
+                    <p>Hotline: (046) 888-9999</p>
+                    <p>Emergency: 911</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <h3>Email</h3>
+                    <p>info@bacoor.gov.ph</p>
+                    <p>mayor@bacoor.gov.ph</p>
+                    <p>support@bacoor.gov.ph</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">🕐</div>
+                    <h3>Office Hours</h3>
+                    <p>Monday - Friday</p>
+                    <p>8:00 AM - 5:00 PM</p>
+                    <p>Closed on Holidays</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form and Map -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-form-container">
+                    <h2>Send Us a Message</h2>
+                    <p>Have questions or feedback? Fill out the form below and we'll get back to you soon.</p>
+                    
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="contactName">Full Name *</label>
+                            <input type="text" id="contactName" name="contactName" required>
+                            <span class="error-message" id="contactNameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactEmail">Email Address *</label>
+                            <input type="email" id="contactEmail" name="contactEmail" required>
+                            <span class="error-message" id="contactEmailError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactPhone">Contact Number</label>
+                            <input type="tel" id="contactPhone" name="contactPhone">
+                            <span class="error-message" id="contactPhoneError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactSubject">Subject *</label>
+                            <select id="contactSubject" name="contactSubject" required>
+                                <option value="">Select Subject</option>
+                                <option value="General Inquiry">General Inquiry</option>
+                                <option value="Service Request">Service Request</option>
+                                <option value="Complaint">Complaint</option>
+                                <option value="Suggestion">Suggestion</option>
+                                <option value="Feedback">Feedback</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <span class="error-message" id="contactSubjectError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactMessage">Message *</label>
+                            <textarea id="contactMessage" name="contactMessage" rows="6" required></textarea>
+                            <span class="error-message" id="contactMessageError"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+
+                    <div id="contactSuccessMessage" class="success-message" style="display: none;">
+                        <h3>✓ Message Sent Successfully!</h3>
+                        <p>Thank you for contacting us. We will respond to your message within 1-2 business days.</p>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <h2>Location Map</h2>
+                    <div class="map-placeholder">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3862.8791234567!2d120.9584!3d14.4567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDI3JzI0LjEiTiAxMjDCsDU3JzMwLjIiRQ!5e0!3m2!1sen!2sph!4v1234567890"
+                            width="100%" 
+                            height="400" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                    <div class="directions">
+                        <h3>How to Get Here</h3>
+                        <p><strong>By Private Vehicle:</strong> Take CAVITEX and exit at Bacoor. Follow signs to City Hall.</p>
+                        <p><strong>By Public Transport:</strong> Ride buses going to Bacoor from Manila or take jeepneys from nearby municipalities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Department Contacts -->
+    <section class="department-contacts">
+        <div class="container">
+            <h2>Department Hotlines</h2>
+            <div class="hotline-grid">
+                <div class="hotline-item">
+                    <strong>City Health Office</strong>
+                    <p>📞 (046) 123-4570</p>
+                </div>
+                <div class="hotline-item">
+                    <strong>Engineering Office</strong>
+                    <p>📞 (046) 123-4571</p>
+                </div>
+                <div class="hotline-item">
+                    <strong>Social Welfare</strong>
+                    <p>📞 (046) 123-4572</p>
+                </div>
+                <div class="hotline-item">
+                    <strong>Business Permits</strong>
+                    <p>📞 (046) 123-4573</p>
+                </div>
+                <div class="hotline-item">
+                    <strong>Police Station</strong>
+                    <p>📞 (046) 123-4574</p>
+                </div>
+                <div class="hotline-item">
+                    <strong>Fire Department</strong>
+                    <p>📞 (046) 123-4575</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Bacoor City LGU</h3>
+                    <p>Committed to serving the people with integrity, transparency, and excellence.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="departments.html">Departments</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="announcements.html">Announcements</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <p>📍 City Hall, Bacoor, Cavite</p>
+                    <p>📞 (046) 123-4567</p>
+                    <p>✉️ info@bacoor.gov.ph</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Office Hours</h3>
+                    <p>Monday - Friday</p>
+                    <p>8:00 AM - 5:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bacoor City Local Government Unit. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/contact-form.js"></script>
+</body>
+</html>

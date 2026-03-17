@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcements - Bacoor City</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/bacoor-seal.png" alt="Bacoor City Seal" onerror="this.style.display='none'">
+                <div class="logo-text">
+                    <h1>Bacoor City</h1>
+                    <p>Local Government Unit</p>
+                </div>
+            </div>
+            <nav id="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="departments.html">Departments</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="announcements.html" class="active">Announcements</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Announcements & News</h1>
+            <p>Stay updated with the latest news and announcements from the city</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="announcements-filter">
+        <div class="container">
+            <div class="filter-container">
+                <div class="filter-group">
+                    <label for="categoryFilter">Filter by Category:</label>
+                    <select id="categoryFilter" onchange="filterAnnouncements()">
+                        <option value="all">All Categories</option>
+                        <option value="Event">Events</option>
+                        <option value="Advisory">Advisories</option>
+                        <option value="Program">Programs</option>
+                        <option value="News">News</option>
+                        <option value="Emergency">Emergency</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="sortFilter">Sort by:</label>
+                    <select id="sortFilter" onchange="sortAnnouncements()">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Announcements Grid -->
+    <section class="announcements-list-section">
+        <div class="container">
+            <div class="announcements-list" id="announcementsList">
+                <!-- Announcements will be dynamically loaded here -->
+            </div>
+            <div id="noAnnouncementsFound" class="no-results" style="display: none;">
+                <p>No announcements found for the selected category.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Bacoor City LGU</h3>
+                    <p>Committed to serving the people with integrity, transparency, and excellence.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="departments.html">Departments</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="announcements.html">Announcements</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <p>📍 City Hall, Bacoor, Cavite</p>
+                    <p>📞 (046) 123-4567</p>
+                    <p>✉️ info@bacoor.gov.ph</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Office Hours</h3>
+                    <p>Monday - Friday</p>
+                    <p>8:00 AM - 5:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bacoor City Local Government Unit. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Announcement Modal -->
+    <div id="announcementModal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="close" onclick="closeAnnouncementModal()">&times;</span>
+            <div id="announcementModalBody">
+                <!-- Modal content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/announcements.js"></script>
+    <script src="js/modal.js"></script>
+</body>
+</html>

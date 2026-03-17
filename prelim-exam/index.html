@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bacoor City - Official Website</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .logo-text h1 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .logo-text p {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #34495e;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+        }
+
+        /* Page Content */
+        .page-section {
+            display: none;
+            min-height: 100vh;
+            padding-top: 100px;
+            padding-bottom: 50px;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* Home Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1200x600');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 150px 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .link-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .link-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .link-card .icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        /* Announcements Section */
+        .announcements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .announcement-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .announcement-card h3 {
+            padding: 20px;
+            background-color: #f8f9fa;
+            margin: 0;
+        }
+
+        .announcement-card p {
+            padding: 20px;
+            margin: 0;
+        }
+
+        /* About Section */
+        .content-with-image {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .vm-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .vm-card {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Services Section */
+        .accordion {
+            margin-top: 40px;
+        }
+
+        .accordion-item {
+            background: white;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .accordion-header {
+            width: 100%;
+            padding: 20px;
+            background: #f8f9fa;
+            border: none;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .accordion-content {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .accordion-content.active {
+            padding: 20px;
+            max-height: 1000px;
+        }
+
+        /* Contact Section */
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 60px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #ecf0f1;
+            text-decoration: none;
+        }
+
+        .footer-col a:hover {
+            color: #3498db;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .content-with-image {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-placeholder">🏛️</div>
+                    <div class="logo-text">
+                        <h1>Bacoor City</h1>
+                        <p>Local Government Unit</p>
+                    </div>
+                </div>
+                <nav>
+                    <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul id="navMenu">
+                        <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+                        <li><a href="#" class="nav-link" data-page="about">About</a></li>
+                        <li><a href="#" class="nav-link" data-page="announcements">Announcements</a></li>
+                        <li><a href="#" class="nav-link" data-page="services">Services</a></li>
+                        <li><a href="#" class="nav-link" data-page="contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="page-section active">
+        <div class="hero">
+            <div class="container">
+                <h2>Welcome to Bacoor City</h2>
+                <p>Building a Progressive and Sustainable Community</p>
+                <a href="#" class="btn nav-link" data-page="services">Explore Services</a>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="quick-links">
+                <h2>Quick Access</h2>
+                <div class="links-grid">
+                    <div class="link-card">
+                        <div class="icon">📋</div>
+                        <h3>Online Services</h3>
+                        <p>Access government services online</p>
+                        <a href="#" class="nav-link" data-page="services">Access Now</a>
+                    </div>
+                    <div class="link-card">
+                        <div class="icon">📢</div>
+                        <h3>Announcements</h3>
+                        <p>Latest news and updates</p>
+                        <a href="#" class="nav-link" data-page="announcements">View All</a>
+                    </div>
+                    <div class="link-card">
+                        <div class="icon">🏛️</div>
+                        <h3>Departments</h3>
+                        <p>City offices and departments</p>
+                        <a href="#" class="nav-link" data-page="about">Explore</a>
+                    </div>
+                    <div class="link-card">
+                        <div class="icon">📞</div>
+                        <h3>Contact Us</h3>
+                        <p>Get in touch with us</p>
+                        <a href="#" class="nav-link" data-page="contact">Contact</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="city-stats">
+                <h2>Bacoor City at a Glance</h2>
+                <div class="stats-grid">
+                    <div class="link-card">
+                        <h3>664,625</h3>
+                        <p>Population (2020)</p>
+                    </div>
+                    <div class="link-card">
+                        <h3>52.4 km²</h3>
+                        <p>Land Area</p>
+                    </div>
+                    <div class="link-card">
+                        <h3>73</h3>
+                        <p>Barangays</p>
+                    </div>
+                    <div class="link-card">
+                        <h3>1901</h3>
+                        <p>Cityhood Year</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="page-section">
+        <div class="page-header">
+            <div class="container">
+                <h1>About Bacoor City</h1>
+                <p>Know more about our rich history and vision for the future</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="content-with-image">
+                <div class="text-content">
+                    <h2>Our History</h2>
+                    <p>Bacoor, officially known as the City of Bacoor, is a first-class component city in the province of Cavite, Philippines. According to the 2020 census, it has a population of 664,625 people, making it the most populous city in the province.</p>
+                    <p>The city was created through Republic Act No. 9017, signed by President Gloria Macapagal Arroyo on March 15, 2002. However, Bacoor's history dates back to the Spanish colonial period, playing a significant role in the Philippine Revolution.</p>
+                </div>
+                <div class="image-content">
+                    <div class="placeholder-image" style="font-size: 10rem; text-align: center;">🏛️</div>
+                </div>
+            </div>
+
+            <div class="vm-grid">
+                <div class="vm-card">
+                    <div class="vm-icon" style="font-size: 3rem;">🎯</div>
+                    <h2>Vision</h2>
+                    <p>A progressive, peaceful, and God-loving city with empowered and self-reliant citizens enjoying a high quality of life through good governance, sustainable development, and ecological balance.</p>
+                </div>
+                <div class="vm-card">
+                    <div class="vm-icon" style="font-size: 3rem;">🚀</div>
+                    <h2>Mission</h2>
+                    <p>To provide quality and responsive public service through effective and efficient governance, promote sustainable economic development, protect the environment, and ensure the welfare and safety of all Bacoorenos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Announcements Section -->
+    <section id="announcements" class="page-section">
+        <div class="page-header">
+            <div class="container">
+                <h1>Announcements & News</h1>
+                <p>Stay updated with the latest news and announcements from the city</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="announcements-grid">
+                <div class="announcement-card">
+                    <h3>🚧 Road Construction Notice</h3>
+                    <p>Major road rehabilitation along Molino Boulevard from November 15-30, 2024. Expect traffic rerouting.</p>
+                </div>
+                <div class="announcement-card">
+                    <h3>🏥 Free Medical Mission</h3>
+                    <p>Free medical and dental services at City Hall grounds on November 20, 2024, 8AM-5PM.</p>
+                </div>
+                <div class="announcement-card">
+                    <h3>💼 Business Permit Renewal</h3>
+                    <p>Renewal of business permits starts January 1, 2025. Early renewals get 10% discount until Dec 15.</p>
+                </div>
+                <div class="announcement-card">
+                    <h3>🎄 Christmas Festival 2024</h3>
+                    <p>Join our Christmas Festival from December 15-25 featuring concerts, bazaars, and fireworks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="page-section">
+        <div class="page-header">
+            <div class="container">
+                <h1>Public Services</h1>
+                <p>Access city government services online and offline</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>📄 Document Services</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul>
+                            <li><strong>Business Permit Application</strong> - Apply for new business permits</li>
+                            <li><strong>Cedula</strong> - Community Tax Certificate</li>
+                            <li><strong>Barangay Clearance</strong> - For employment and transactions</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>🏥 Health Services</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul>
+                            <li><strong>Health Certificate</strong> - For employment requirements</li>
+                            <li><strong>Vaccination Services</strong> - Free vaccination programs</li>
+                            <li><strong>Medical Consultation</strong> - Free at health centers</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>👥 Social Services</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul>
+                            <li><strong>Senior Citizen ID</strong> - Application and benefits</li>
+                            <li><strong>PWD ID Application</strong> - For Persons with Disability</li>
+                            <li><strong>Financial Assistance</strong> - Medical, burial, educational</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form" style="margin-top: 40px;">
+                <h2>Service Request Form</h2>
+                <form id="serviceForm">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Needed *</label>
+                        <select id="service" required>
+                            <option value="">Select Service</option>
+                            <option value="Business Permit">Business Permit</option>
+                            <option value="Cedula">Cedula</option>
+                            <option value="Health Certificate">Health Certificate</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="page-section">
+        <div class="page-header">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <p>Get in touch with Bacoor City Government</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="links-grid">
+                <div class="link-card">
+                    <div class="icon">📍</div>
+                    <h3>Address</h3>
+                    <p>Bacoor City Hall</p>
+                    <p>Government Center, Bacoor, Cavite</p>
+                </div>
+                <div class="link-card">
+                    <div class="icon">📞</div>
+                    <h3>Phone Numbers</h3>
+                    <p>Main Line: (046) 123-4567</p>
+                    <p>Hotline: (046) 888-9999</p>
+                </div>
+                <div class="link-card">
+                    <div class="icon">✉️</div>
+                    <h3>Email</h3>
+                    <p>info@bacoor.gov.ph</p>
+                    <p>support@bacoor.gov.ph</p>
+                </div>
+                <div class="link-card">
+                    <div class="icon">🕐</div>
+                    <h3>Office Hours</h3>
+                    <p>Monday - Friday</p>
+                    <p>8:00 AM - 5:00 PM</p>
+                </div>
+            </div>
+
+            <div class="contact-form" style="margin-top: 40px;">
+                <h2>Send Us a Message</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="contactName">Full Name *</label>
+                        <input type="text" id="contactName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Email Address *</label>
+                        <input type="email" id="contactEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactSubject">Subject *</label>
+                        <select id="contactSubject" required>
+                            <option value="">Select Subject</option>
+                            <option value="General Inquiry">General Inquiry</option>
+                            <option value="Service Request">Service Request</option>
+                            <option value="Feedback">Feedback</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMessage">Message *</label>
+                        <textarea id="contactMessage" rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Bacoor City LGU</h3>
+                    <p>Committed to serving the people with integrity, transparency, and excellence.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#" class="nav-link" data-page="home">Home</a></li>
+                        <li><a href="#" class="nav-link" data-page="about">About</a></li>
+                        <li><a href="#" class="nav-link" data-page="services">Services</a></li>
+                        <li><a href="#" class="nav-link" data-page="announcements">Announcements</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <p>📍 City Hall, Bacoor, Cavite</p>
+                    <p>📞 (046) 123-4567</p>
+                    <p>✉️ info@bacoor.gov.ph</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Office Hours</h3>
+                    <p>Monday - Friday</p>
+                    <p>8:00 AM - 5:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bacoor City Local Government Unit. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const navMenu = document.getElementById('navMenu');
+            
+            mobileMenuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+
+            // Navigation between sections
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pageSections = document.querySelectorAll('.page-section');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Get the target page
+                    const targetPage = this.getAttribute('data-page');
+                    
+                    // Hide all sections
+                    pageSections.forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    
+                    // Show target section
+                    document.getElementById(targetPage).classList.add('active');
+                    
+                    // Update active nav link
+                    navLinks.forEach(navLink => {
+                        navLink.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    // Close mobile menu if open
+                    navMenu.classList.remove('active');
+                    
+                    // Scroll to top
+                    window.scrollTo(0, 0);
+                });
+            });
+
+            // Accordion functionality
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.accordion-icon');
+                    
+                    // Toggle active class
+                    content.classList.toggle('active');
+                    
+                    // Toggle icon
+                    if (content.classList.contains('active')) {
+                        icon.textContent = '−';
+                    } else {
+                        icon.textContent = '+';
+                    }
+                    
+                    // Close other accordion items
+                    accordionHeaders.forEach(otherHeader => {
+                        if (otherHeader !== this) {
+                            otherHeader.nextElementSibling.classList.remove('active');
+                            otherHeader.querySelector('.accordion-icon').textContent = '+';
+                        }
+                    });
+                });
+            });
+
+            // Form submission handlers
+            const serviceForm = document.getElementById('serviceForm');
+            const contactForm = document.getElementById('contactForm');
+            
+            if (serviceForm) {
+                serviceForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Service request submitted successfully! We will contact you within 24 hours.');
+                    this.reset();
+                });
+            }
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Message sent successfully! Thank you for contacting us.');
+                    this.reset();
+                });
+            }
+        });
+    </script>
+</body>
+</html>

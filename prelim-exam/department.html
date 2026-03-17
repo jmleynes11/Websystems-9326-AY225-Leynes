@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Departments - Bacoor City</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/bacoor-seal.png" alt="Bacoor City Seal" onerror="this.style.display='none'">
+                <div class="logo-text">
+                    <h1>Bacoor City</h1>
+                    <p>Local Government Unit</p>
+                </div>
+            </div>
+            <nav id="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="departments.html" class="active">Departments</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="announcements.html">Announcements</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>City Departments & Offices</h1>
+            <p>Find the right department for your needs</p>
+        </div>
+    </section>
+
+    <!-- Search and Filter -->
+    <section class="search-filter">
+        <div class="container">
+            <div class="search-box">
+                <input type="text" id="departmentSearch" placeholder="Search departments by name or category..." onkeyup="filterDepartments()">
+                <button onclick="filterDepartments()">🔍 Search</button>
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterByCategory('all')">All Departments</button>
+                <button class="filter-btn" onclick="filterByCategory('Administrative')">Administrative</button>
+                <button class="filter-btn" onclick="filterByCategory('Social Services')">Social Services</button>
+                <button class="filter-btn" onclick="filterByCategory('Infrastructure')">Infrastructure</button>
+                <button class="filter-btn" onclick="filterByCategory('Public Safety')">Public Safety</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Departments Grid -->
+    <section class="departments-section">
+        <div class="container">
+            <div class="departments-grid" id="departmentsGrid">
+                <!-- Department Cards will be dynamically loaded -->
+            </div>
+            <div id="noResults" class="no-results" style="display: none;">
+                <p>No departments found matching your search.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Bacoor City LGU</h3>
+                    <p>Committed to serving the people with integrity, transparency, and excellence.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="departments.html">Departments</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="announcements.html">Announcements</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <p>📍 City Hall, Bacoor, Cavite</p>
+                    <p>📞 (046) 123-4567</p>
+                    <p>✉️ info@bacoor.gov.ph</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Office Hours</h3>
+                    <p>Monday - Friday</p>
+                    <p>8:00 AM - 5:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bacoor City Local Government Unit. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Department Modal -->
+    <div id="departmentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalBody">
+                <!-- Modal content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/departments.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/storage.js"></script>
+</body>
+</html>

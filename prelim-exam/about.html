@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Bacoor City - Official Website</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/bacoor-seal.png" alt="Bacoor City Seal" onerror="this.style.display='none'">
+                <div class="logo-text">
+                    <h1>Bacoor City</h1>
+                    <p>Local Government Unit</p>
+                </div>
+            </div>
+            <nav id="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="departments.html">Departments</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="announcements.html">Announcements</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>About Bacoor City</h1>
+            <p>Know more about our rich history and vision for the future</p>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="section-content">
+                <h2>Our History</h2>
+                <div class="content-with-image">
+                    <div class="text-content">
+                        <p>Bacoor, officially known as the City of Bacoor, is a first-class component city in the province of Cavite, Philippines. According to the 2020 census, it has a population of 664,625 people, making it the most populous city in the province.</p>
+                        <p>The city was created through Republic Act No. 9017, signed by President Gloria Macapagal Arroyo on March 15, 2002. However, Bacoor's history dates back to the Spanish colonial period, playing a significant role in the Philippine Revolution.</p>
+                        <p>Today, Bacoor has transformed into a progressive city, balancing urban development with its rich cultural heritage. The city continues to honor its historical significance while embracing modern governance and sustainable development.</p>
+                    </div>
+                    <div class="image-content">
+                        <div class="placeholder-image">🏛️</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Mission -->
+    <section class="vision-mission">
+        <div class="container">
+            <div class="vm-grid">
+                <div class="vm-card">
+                    <div class="vm-icon">🎯</div>
+                    <h2>Vision</h2>
+                    <p>A progressive, peaceful, and God-loving city with empowered and self-reliant citizens enjoying a high quality of life through good governance, sustainable development, and ecological balance.</p>
+                </div>
+                <div class="vm-card">
+                    <div class="vm-icon">🚀</div>
+                    <h2>Mission</h2>
+                    <p>To provide quality and responsive public service through effective and efficient governance, promote sustainable economic development, protect the environment, and ensure the welfare and safety of all Bacoorenos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- City Officials -->
+    <section class="about-section bg-light">
+        <div class="container">
+            <h2>City Officials</h2>
+            <div class="officials-grid">
+                <div class="official-card">
+                    <div class="official-photo">👨‍💼</div>
+                    <h3>Hon. Strike B. Revilla</h3>
+                    <p class="position">City Mayor</p>
+                </div>
+                <div class="official-card">
+                    <div class="official-photo">👨‍💼</div>
+                    <h3>Hon. Rowena Mendiola</h3>
+                    <p class="position">Vice Mayor</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- City Information Tabs -->
+    <section class="about-section">
+        <div class="container">
+            <h2>City Information</h2>
+            <div class="tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" onclick="openTab(event, 'geography')">Geography</button>
+                    <button class="tab-btn" onclick="openTab(event, 'economy')">Economy</button>
+                    <button class="tab-btn" onclick="openTab(event, 'culture')">Culture</button>
+                </div>
+                <div id="geography" class="tab-content active">
+                    <h3>Geography & Climate</h3>
+                    <p><strong>Location:</strong> Bacoor is located in the northeastern portion of Cavite province, bordered by Las Piñas and Parañaque to the north, Kawit to the south, Imus to the southwest, and Manila Bay to the east.</p>
+                    <p><strong>Land Area:</strong> 52.4 square kilometers</p>
+                    <p><strong>Climate:</strong> Bacoor has a tropical climate with two distinct seasons - the dry season from November to April and the wet season from May to October.</p>
+                    <p><strong>Barangays:</strong> The city is composed of 73 barangays, making it one of the most densely populated areas in the province.</p>
+                </div>
+                <div id="economy" class="tab-content">
+                    <h3>Economic Profile</h3>
+                    <p>Bacoor's economy is diverse, with a mix of industrial, commercial, and service sectors. The city has experienced significant economic growth due to its strategic location near Metro Manila.</p>
+                    <p><strong>Key Industries:</strong></p>
+                    <ul>
+                        <li>Manufacturing and light industries</li>
+                        <li>Retail and wholesale trade</li>
+                        <li>Real estate and property development</li>
+                        <li>Business process outsourcing (BPO)</li>
+                        <li>Food and beverage services</li>
+                    </ul>
+                    <p>The city continues to attract investors due to its accessibility, growing population, and supportive local government policies.</p>
+                </div>
+                <div id="culture" class="tab-content">
+                    <h3>Culture & Heritage</h3>
+                    <p>Bacoor takes pride in its rich cultural heritage and historical significance in Philippine history.</p>
+                    <p><strong>Festivals:</strong></p>
+                    <ul>
+                        <li><strong>Paruparo Festival</strong> - Celebrates the city's progress and transformation</li>
+                        <li><strong>Battle of Bacoor Anniversary</strong> - Commemorates the city's role in the Philippine Revolution</li>
+                    </ul>
+                    <p><strong>Historical Sites:</strong></p>
+                    <ul>
+                        <li>Bacoor Church (Immaculate Conception Parish)</li>
+                        <li>Battle of Bacoor Monument</li>
+                        <li>Heritage houses and ancestral homes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Bacoor City LGU</h3>
+                    <p>Committed to serving the people with integrity, transparency, and excellence.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="departments.html">Departments</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="announcements.html">Announcements</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <p>📍 City Hall, Bacoor, Cavite</p>
+                    <p>📞 (046) 123-4567</p>
+                    <p>✉️ info@bacoor.gov.ph</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Office Hours</h3>
+                    <p>Monday - Friday</p>
+                    <p>8:00 AM - 5:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bacoor City Local Government Unit. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/tabs.js"></script>
+</body>
+</html>
